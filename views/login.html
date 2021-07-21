@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="favicon.ico">
+  <title>AcadUp: a smart learning platform</title>
+  
+  <style>
+    /* #login1{
+      display: none;
+    } */
+    /* #verify2{
+      display: none;
+    } */
+    /* #forgotPass{
+      display: none;
+    } */
+  </style>
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+
+<!-- CSS Stlesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="public/css/login.css">
+
+<!-- Fontawesome CDN -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+ <script src="https://use.fontawesome.com/38a4e57581.js"></script>
+<!--<link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">-->
+
+  <!-- Bootstrap scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+</head>
+<body>
+  <section id=title>
+      <!-- Nav Bar -->
+      <div class="bs-example">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a href="#" class="navbar-brand">
+                <img src="public/images/LOGO SHIELD 4.png" height="55px" alt="logo">
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <div class="navbar-nav">
+                  <ul class="nav navbar-nav navbar-left">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                      <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown">Courses</a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="courses-class-12.html">Class 12</a>
+                        <a class="dropdown-item" href="courses-class-11.html">Class 11</a>
+                        <a class="dropdown-item" href="courses-class-10.html">Class 10</a>
+                        <a class="dropdown-item" href="courses-class-9.html">Class 9</a>
+                        <a class="dropdown-item" href="courses-class-8.html">Class 8</a>
+                        <a class="dropdown-item" href="courses-class-7.html">Class 7</a>
+                        <a class="dropdown-item" href="courses-class-6.html">Class 6</a>
+                      </div>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown">1-on-1 Classes</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">CBSE</a>
+                            <a class="dropdown-item" href="#">ICSE</a>
+                            <a class="dropdown-item" href="#">BSEB</a>
+                            <a class="dropdown-item" href="#">WB board</a>
+                            <a class="dropdown-item" href="#">Reading Classes</a>
+                            <a class="dropdown-item" href="#">Coding Classes</a>
+                            <a class="dropdown-item" href="#">Robotics Classes</a>
+                        </div>
+                        </li>
+                      <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown">Exams</a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Alleen Test solution</a>
+                          <a class="dropdown-item" href="#">JEE Mains</a>
+                          <a class="dropdown-item" href="#">JEE Advanced</a>
+                          <a class="dropdown-item" href="#">X Boards</a>
+                          <a class="dropdown-item" href="#">XII Boards</a>
+                          <a class="dropdown-item" href="#">NEET</a>
+                      </div>
+                      </li>
+                      <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown">Study Materials</a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Rd Sharma / Rs Agarwal</a>
+                          <a class="dropdown-item" href="#">NCERT</a>
+                          <a class="dropdown-item" href="#">NCERT हिंदी</a>
+                          <a class="dropdown-item" href="#">Cengage / G. Tewani</a>
+                          
+                      </div>
+                      </li>
+                      <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown">Books</a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Physics</a>
+                          <a class="dropdown-item" href="#">Chemistry</a>
+                          <a class="dropdown-item" href="#">Biology</a>
+                          <a class="dropdown-item" href="#">Maths</a>
+                      </div>
+                      </li>
+                      
+                        <li class="nav-item">
+                          <a class="nav-link" href="">Kids Courses</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">More</a>
+                    </li>
+                    
+                      <li class="login-buttons" >
+                      <a class="nav-link" href="login.html"><button type="button" class="btn btn-dark ">login</button></a>
+                      </li>
+                      <li class="login-buttons">
+                      <a class="nav-link" href="register.html"><button type="button" class="btn btn-dark">Register</button></a>
+                  </li>
+                 
+              
+                  </ul>
+                                
+              </div>
+              
+          </div>
+            
+         </nav>
+      </div>
+    </section> 
+   <div class="row upper-body">
+       <div class="col-lg-6"> 
+    <div class="form-container mb-5">    
+                  
+                        <div class="logo-img">
+                          <img src="public/images/LOGO SHIELD 4.png" alt="Avatar" class="avatar">
+                        </div>
+                      
+                        <div class="container">
+                          <p>Welcome back!</p>
+                          <label for="uname"><b>Email Id</b></label>
+                          <input type="text" placeholder="Enter mailId" name="uname" id="email_field" required>
+                      
+                          <label for="psw"><b>Password</b></label>
+                          <input type="password" placeholder="Enter Password" name="psw" id="password_field" required>
+                      
+                          <!-- <button type="submit" id="verify1" onclick="sendVerificationEmail()">Verify</button> -->
+                          <!-- <h3 id="verify2">* Verify first then you can login</h3> -->
+                          <button type="submit" id="login1" onclick="login()">Login</button>
+                          <button type="submit" id="forgotPass" onclick="forgotPassword()">Forgot Password</button>
+                          <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                          </label>
+                          <h6>Or</h6> 
+                          <hr> 
+
+                          <a href="#" class="google btn">
+                            <i class="fa fa-google fa-fw"></i> Login with Google+
+                          </a>
+                          
+                        </div>
+                        
+                      
+                        <div class="container" style="background-color:#f1f1f1">
+                          <button type="button" class="cancelbtn">Cancel</button>
+                          <span class="psw">Forgot <a href="#">password?</a></span>
+                        </div>
+                  
+    </div>   
+    </div>
+    <div class="col-lg-6">
+        <img id="right-img" src="public/images/register.png" alt="">
+    </div>
+    </div>
+
+<!-- Footer Starts -->
+<footer >
+  <div class="footer-below">
+      <div class="footer-container">
+          <div class="row upper">
+              <div class="footer-col col-md-3">
+                  <h4>CONTACT</h4>
+                  <p> <i class="fas fa-map-marker-alt"></i> <span>5th Floor Devi Market,
+        83, Shyama Prasad Mukherjee Rd,
+        Kolkata, West Bengal 700026, India</span><br><br>
+                    <a href="#"><i class="fas fa-envelope"></i> rishavju21@gmail.com</a><br><br>
+        <a href="#"><i class="fas fa-mobile-alt"></i> 9113313639</a>
+      </p>
+              </div>
+              <div class="footer-col col-md-3">
+                  <h4>COMPANY</h4>
+                  <p><a href="#">About Us</a><br><a href="#">Gallery</a><br><a href="#">Blog & News</a><br><a href="#">FAQ's</a><br> <a href="#">Franchise</a><br></p>
+              </div>
+              <div class="footer-col col-md-3">
+                  <h4>LEGAL AND PRIVACY</h4>
+                  <p>
+                    <a href="#">Terms and Conditions</a><br>
+                    <a href="#">Privacy Policy</a><br>
+                    <a href="#">Disclaimer</a><br>
+                    <a href="#">Return Policy</a><br>
+                  </p>
+              </div>
+              <div class="footer-col col-md-3">
+                  <h4>DETAIL</h4>
+                  <p>
+                    <a href="#">Team Members</a><br>
+                    <a href="#">Teach With Us</a><br>
+                    <a href="#">Campus Ambassador</a>
+                  </p>
+                  <ul class="list-inline">
+                    <li>
+                          <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i style="color:#83f2f7;" class="fab fa-twitter-square fa-2x"></i></a>
+                      </li>
+                      <li>
+                          <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i style="color:#4267B2;" class="fab fa-facebook-square fa-2x"></i></a>
+                      </li>
+                      <li>
+                          <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i style="color:pink;" class="fab fa-instagram fa-2x"></i></a>
+                      </li>
+                      <li>
+                          <a href="#" class="btn-social btn-outline" style="text-decoration: none"><i style="color:#2170b5;" class="fab fa-linkedin fa-2x"></i></a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="footer-container">
+          <div class="row">
+              <div class="col-md-9">
+                  &copy; 2020 Penseur Lab Educational Private Limited <a href="#">Thinkerlab.</a>
+              </div>
+              <div class="col-md-3">
+                <ul class="list-inline">
+                  <li ><a href="#" style="color:white;">Privacy</a></li>
+                  <li><a href="#" style="color:white;">Terms</a></li>
+                  <li><a href="#" style="color:white;">Sitemap</a></li>
+                  <li><a href="#" style="color:white;">Purchase</a></li>
+                </ul>
+              </div>
+          </div>
+      </div></div>
+</footer>
+<!-- Footer Ends -->
+
+<!--Firebase Script-->
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>"
+    <script>
+        // Initialize Firebase
+        
+        const config = {
+            apiKey: "AIzaSyC2l7pLCU-5dVikFhs18-Jlgh6lBhn4UPw",
+            authDomain: "acadup-68402.firebaseapp.com",
+            projectId: "acadup-68402",
+            storageBucket: "acadup-68402.appspot.com",
+            messagingSenderId: "735931673293",
+            appId: "1:735931673293:web:0f176521631eb824459784",
+            measurementId: "G-TJCF4QGHGG"
+        };
+        firebase.initializeApp(config);
+
+        function login(){
+          var userEmail = document.getElementById("email_field").value;
+          var userPass = document.getElementById("password_field").value;  
+          console.log('Email',userEmail)
+          console.log('Pass',userPass)
+          var user1 = firebase.auth().currentUser;
+          firebase.auth().signInWithEmailAndPassword(userEmail, userPass)
+          .then((userCredential) => {
+            // Signed in
+            // if(user1.emailVerified)
+            // {
+            var user = userCredential.user;
+            console.log('ussa',user.emailVerified);
+            console.log('ema',userCredential);
+            if(user.emailVerified)
+            {
+              console.log('success')
+              localStorage.setItem(user.email,'signedIn')
+              user.getIdToken().then(x => console.log(x))
+              console.log('000000000000000000',localStorage)
+              fetch('http://localhost:5000/mcqs', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+                },
+                body: JSON.stringify(localStorage),
+                })
+                .then(response => (response.ok)?console.log('ssss'):console.log("problem"))
+                .catch((error)=>{
+                  console.log('sds'+error);
+                })
+            }
+            else{
+              console.log('not verified email')
+              firebase.auth().signOut().then(function() {
+                console.log('Signed Out');
+              })
+            }
+            // window.location.assign('/quiz')
+            // }
+            // else{
+            //   console.log('User not verified')
+            // }
+            // ...
+          })
+          .catch((error) => {
+            console.log(error);
+            var errorCode = error.code;
+            var errorMessage = error.message;
+          });
+        }
+
+
+        firebase.auth().onAuthStateChanged(function(user) {
+            // user.reload();
+            console.log('safsfaasf0',user);
+            if (user) {
+                // var flag=0;
+                var emailVerified = user.emailVerified;
+                var email = user.email;
+                var data =  '<h4> Hello, ' + email + '</h4>' +
+                            '<h4>Account verified: ' + emailVerified + '</h1>';
+
+                    // document.getElementById("wrapper").innerHTML = data
+                // if(emailVerified == true){
+                //     document.getElementById("verify").style.display = "none"
+                // }
+                // console.log(localStorage);
+                
+            if(emailVerified == true){
+              // const loginbtn = document.getElementById("login1");
+              // const btn = document.getElementById("verify1");
+              // const sentence = document.getElementById("verify2");
+              // const forgot = document.getElementById("forgotPass");
+              // forgot.style.display = "block"; //abhi dekhne lagega...
+              // sentence.style.display = "none";
+              // loginbtn.style.display = "block";
+              // loginbtn.disabled = false;
+              // btn.style.display = "none";
+              // btn.disabled = true;
+          }
+            console.log(user)
+            console.log(data)
+            } 
+            else {
+            console.log("No one here")
+            }
+        }); 
+        // if(flag==1){
+        //   fl
+        // }
+
+        
+        const user = firebase.auth().currentUser;  
+        console.log("Main user ",user);
+        // async function sendVerificationEmail(){
+        //     var user = firebase.auth().currentUser;
+        //     console.log("Bad user ",user);
+        //     if(user.emailVerified==false){
+        //     await user.sendEmailVerification().then(function() {
+        //         const btn = document.getElementById("verify1");
+        //         const sentence = document.getElementById("verify2");
+        //         btn.style.display = "none";
+        //         btn.disabled = true;
+        //         sentence.style.display = "block";
+                
+        //         // loginbtn.style.display = "block";
+        //         // loginbtn.disabled = false;
+        //         window.alert("Verification link sent to your email. Kinldy check to verify your account")
+        //         console.log("dan dana dan");
+        //     }).catch(function(error) {
+        //     // An error happened.
+        //       window.alert('Error occurred!');
+        //       console.log("errrrrrrrrrrr");
+        //     });     
+
+
+        //   }
+        //   else{
+        //     window.alert('You are already verified!!');
+        //   }           
+        // }
+
+        function forgotPassword(){
+          var userEmail = document.getElementById("email_field").value;
+          firebase.auth().sendPasswordResetEmail(userEmail).catch(() => {
+            var errorCode = error.code
+            var errorMessage = error.message				
+          }).then(() => {
+              window.alert("Verification link sent to your email. Kinldy check to verify your account")
+          });
+        }
+    </script>
+<!--Firebase Script Ends-->
+
+</body>
+</html>

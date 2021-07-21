@@ -1,0 +1,223 @@
+html{
+	scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    
+    overflow-y: scroll;
+	  overflow-x: hidden;
+	  max-width: 100%;
+    background-color: rgba(60, 94, 243, 0.658);
+}
+
+h6{
+  text-align: center;
+  width: 60px;
+  margin: 0 38% 0;
+  font-family:'Montserrat';
+  color: #fff;
+  background-color: black;
+  
+  border-radius: 15%;
+}
+p{
+/* text-align: center; */
+font-weight: bold;
+line-height: 3rem;
+}
+
+
+
+/*-----navbar styling starts-----*/
+#title{
+  
+  padding: 0 2rem 3rem;
+  text-align: left;
+}
+
+
+.navbar-nav>li{
+  
+  font-size: 4 rem;
+   
+}
+.nav-item{
+  margin: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  position: auto;
+  font-weight: 500;
+}
+.dropdown-item{
+  font-weight: 500;
+  margin: 2px;
+}
+
+
+.bs-example{
+  padding-top: 2%;
+   padding-bottom: 2%;
+  
+}
+
+.navbar-brand{
+  font-family:'Times New roman' ;
+  
+ 
+}
+/*-----navbar styling ends-----*/ 
+  .form-container{
+      margin: 0 5% 0;
+      padding: 0 5% 0;
+      border:1.5px solid black;
+      background-color: whitesmoke;
+      border-radius: 10px;
+      box-shadow:-1px 16px 40px 0px rgba(0,0,0,0.19);
+      width: auto;
+       
+  }
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #3004aa;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra style for the cancel button (red) */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  /* Center the avatar image inside this container */
+  .logo-img {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  /* Avatar image */
+  img.avatar {
+    width: 40%;
+   
+  }
+  
+  /* Add padding to containers */
+  .container {
+    padding: 3% 15% 3%;
+    
+  }
+  
+  /* The "Forgot password" text */
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  
+  input:hover,
+  .btn:hover {
+    opacity: 1;
+  }
+  
+  /* add appropriate colors to fb, twitter and google buttons */
+ 
+  .google {
+    background-color: #dd4b39;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;    
+    text-align: center;
+  }
+  #right-img{
+    margin: 0 0 5% 0;
+    width: 95%;
+    
+
+}
+  /* Footer Styling Starts */
+  .footer-container{
+    padding-left: 30px;
+}
+.footer-below{
+  color:white;
+  background:black;
+  
+  padding:15px;
+  }
+  .footer-below h4{
+    font-size: 23px !important;
+  }
+  .footer-below p{
+    color:grey;
+  }
+  .footer-below p>a{
+    color:grey;
+    text-decoration: none;
+  }
+  .footer-below p> a:hover{
+    color:cyan !important;
+    text-decoration: none;
+  }
+  .upper{
+    border-bottom:1px solid cyan;
+    margin-bottom: 25px;
+    margin-top:25px;
+  }
+  /* Footer Styling Ends */
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+    .footer-below h4{
+      font-size: 15px !important;
+  }
+  .col {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  @media(max-width: 770px){
+    .navbar-nav{
+      text-align: left;
+     }
+     
+    .nav-item {
+      font-size: 1.5rem;
+    }
+    .dropdown-item{
+      font-size: 1.5rem;
+    }
+    
+    .login-buttons{
+      font-size: 1.5rem;
+    }
+  }

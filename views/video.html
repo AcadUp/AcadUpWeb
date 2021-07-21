@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            background-color: aqua;
+        } */
+        body 
+        {
+            background:
+                linear-gradient(
+                rgba(246,247,249,0.8),
+                rgba(246,247,249,0.8)),
+                url('../public/images/diamond.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+        }
+        label{
+            font-weight: bold;
+        }
+        .link{
+            margin-left: 45px;
+            margin-bottom: 10px;
+        }
+
+        .dropdown{
+            margin-bottom: 10px;
+            margin-left: 45px;
+        }    
+        h3{
+            /* display: flex; */
+            margin-left: 45px;
+            /* justify-content: center; */
+        }
+        textarea{
+            display: flex;
+            margin: 10px auto;
+        }
+        .btnclass{
+            margin-left: 45px;
+        }
+    </style>
+</head>
+<body>
+   
+    <div>
+        
+        <div class="dropdown">
+            <label for="class">Select Class:</label>
+            <select name="class" id="class">
+                <option value="Class 1">Class 1</option>
+                <option value="Class 2">Class 2</option>
+                <option value="Class 3">Class 3</option>
+                <option value="Class 4">Class 4</option>
+                <option value="Class 5">Class 5</option>
+                <option value="Class 6">Class 6</option>
+                <option value="Class 7">Class 7</option>
+                <option value="Class 8">Class 8</option>
+                <option value="Class 9">Class 9</option>
+            </select>
+        </div>
+
+
+        <div class="dropdown">
+            <label for="subject">Select Subject:</label>
+            <select name="subject" id="subject">
+                <option value="science">Science</option>
+                <option value="maths">Maths</option>
+                <option value="programming">Programming</option>
+            </select>
+        </div>
+
+        <div class="dropdown">
+            <label for="chapter">Select Chapter:</label>
+            <select name="chapter" id="chapter">
+                <option value="ch1">Chapter 1</option>
+                <option value="ch2">Chapter 2</option>
+                <option value="ch3">Chapter 3</option>
+            </select>
+        </div>
+
+        <h3 id="courseDesc" >COURSE DESCRIPTION</h3>
+        <textarea name="courseDetails" id="courseDetails" cols="60" rows="10"></textarea>
+
+        <h3 id="certification" >CERTIFICATION</h3>
+        <textarea name="certificationDetalis" id="certificationDetalis" cols="60" rows="10"></textarea>
+
+        <h3 id="learningOutcomes" >LEARNING OUTCOMES</h3>
+        <textarea name="learningOutcomesDetails" id="learningOutcomesDetails" cols="60" rows="10"></textarea>
+
+        <h3 id="drivelink">Drive Link</h3>
+        
+        <div id="lec1" class="link">
+            <input type="text" placeholder="Lecture Name" name="lecture" id="lecture1">
+            <input type="url" placeholder="Drive Link" name="drivelink" id="drivelink1">
+            <input type="url" placeholder="Youtube Link" name="youtubelink" id="youtubelink1">
+        </div>
+
+        <div id="buttons" class="btnclass">
+            <button id="btn1" onclick="duplicate()">Add Lectures</button>
+        </div>
+
+        <div class="btnclass">
+            <button id="save" onclick="saveData()">Save Data</button>
+        </div>
+        
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+   <script>
+               const config = {
+                    apiKey: "AIzaSyC2l7pLCU-5dVikFhs18-Jlgh6lBhn4UPw",
+                    authDomain: "acadup-68402.firebaseapp.com",
+                    projectId: "acadup-68402",
+                    storageBucket: "acadup-68402.appspot.com",
+                    messagingSenderId: "735931673293",
+                    appId: "1:735931673293:web:0f176521631eb824459784",
+                    measurementId: "G-TJCF4QGHGG"
+                };
+        firebase.initializeApp(config);
+        // const database = firebase.database();
+        const database = firebase.firestore();
+       
+        const jsonData = {};
+        var btn = document.getElementById('buttons');
+        console.log("In script");
+        var i = 1;
+        var addition=1;
+
+        var lec = document.getElementById("lec1");
+        var lecture = document.getElementById("lecture1");
+        var youtubelink = document.getElementById("youtubelink1");
+        var drivelink = document.getElementById("drivelink1");
+        
+        console.log(i);
+        function duplicate(){
+            // var clone_mcq = mcq.cloneNode(true);
+            addition = ++i;
+            var e= document.createElement("div");
+            var clone_lec = lec.cloneNode(true); 
+            var clone_lecture = lecture.cloneNode(true);
+            var clone_drivelink = drivelink.cloneNode(true);
+            var clone_youtubelink = youtubelink.cloneNode(true);
+           
+            // clone_mcq.id = "mcq" + ++i;
+            
+            clone_lecture.id = "lecture" + addition;
+            clone_youtubelink.id = "youtubelink" + addition;
+            clone_drivelink.id = "drivelink" + addition;
+           
+            // clone_mcq.append(clone_a,clone_b,clone_c,clone_d);
+            e.append(clone_lecture,clone_drivelink,clone_youtubelink);
+            e.classList.add('link')
+            // document.append(e);
+            console.log(e);
+            console.log(btn);
+            // mcq.parentNode.appendChild(e);
+            lec.parentNode.insertBefore(e,btn);
+
+        }
+
+        function savetoFirebase(data1,data2){
+
+            var e = document.getElementById("class");
+            var value1 = e.options[e.selectedIndex].value;
+
+            var e = document.getElementById("subject");
+            var value2 = e.options[e.selectedIndex].text;
+
+            var e = document.getElementById("chapter");
+            var value3 = e.options[e.selectedIndex].text;
+
+            // database.ref('/mcqs/'+cn).set(data);
+        
+            database.collection('/Courses/'+value1+'/'+value2+'/'+value3+'/Overview/').doc().get()
+            .then((doc)=>{
+                if(doc.exists){
+                    // database.collection('/mcqs/').doc(cn).update(data);
+                    database.collection('/Courses/'+value1+'/'+value2+'/'+value3+'/Overview/').doc().set(data2,{merge:true}); 
+                }
+                else{
+                    database.collection('/Courses/'+value1+'/'+value2+'/'+value3+'/Overview/').doc().set(data2);
+                    // database.collection('/mcqs/').doc('as').delete();
+                }
+            })
+
+            database.collection('/Courses/'+value1+'/'+value2+'/'+value3+'/Curriculum/').doc().get()
+            .then((doc)=>{
+                if(doc.exists){
+                    // database.collection('/mcqs/').doc(cn).update(data);
+                    database.collection('/Courses/'+value1+'/'+value2+'/'+value3+'/Curriculum/').doc().set(data1,{merge:true}); 
+                }
+                else{
+                    database.collection('/Courses/'+value1+'/'+value2+'/'+value3+'/Curriculum/').doc().set(data1);
+                    // database.collection('/mcqs/').doc('as').delete();
+                }
+            })
+            
+            
+        }
+        function saveData(){
+
+            var obj = {}
+            // var courseDesc = document.getElementById("courseDesc").innerText;
+            var courseDetails = document.getElementById("courseDetails").value;
+            // var certification = document.getElementById("certification").innerText;
+            var certificationDetalis = document.getElementById("certificationDetalis").value;
+            // var learningOutcomes = document.getElementById("learningOutcomes").innerText;
+            var learningOutcomesDetails = document.getElementById("learningOutcomesDetails").value;
+
+        
+            obj={
+                'courseDesc':courseDetails,
+                'certification':certificationDetalis,
+                'learningOutcomes':learningOutcomesDetails,
+            }
+
+            console.log(obj)
+            // jsonData[qn]={
+            //             "courseDesc":courseDesc,
+            //             "certification":certification,
+            //             "learningOutcomes":learningOutcomes,                    
+            //         };
+
+
+            let jsonObj = {}
+            for(let j=1; j<=addition ;j++)
+            {   
+                // let arr = [];
+
+                var lecture = document.getElementById("lecture"+j).value;
+                var drivelink = document.getElementById("drivelink"+j).value;
+                var youtubelink = document.getElementById("youtubelink"+j).value;
+                
+                // arr = [a,b,c,d];
+                
+                jsonObj[lecture]={
+                    "drivelink":drivelink,
+                    "youtubelink":youtubelink
+                };
+            }
+
+            console.log(jsonObj);
+            savetoFirebase(jsonObj,obj);
+            
+        };
+
+   </script>
+
+   
+</body>
+</html>

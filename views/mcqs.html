@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p id="previously_added"></p> -->
+    <input type="text" id="cn" placeholder="Enter course name">
+    <div id="mcq1">
+        <input type="text" id="Q1" placeholder="Enter the question">
+        <input type="text" id="a1" placeholder="Enter option A">
+        <input type="text" id="b1" placeholder="Enter option B">
+        <input type="text" id="c1" placeholder="Enter option C">
+        <input type="text" id="d1" placeholder="Enter option D">
+        <input type="number" id="mark1" placeholder="Enter marks">
+        <input type="text" id="ca1" placeholder="Enter Correct ans">
+    </div>
+    <div id="buttons">
+        <button id="btn1" onclick="duplicate()">Add Qn</button>
+        <button id="btn2" onclick="removeElement()">Remove Qn</button>
+        <button id="btn3" onclick="save()">Save Qn</button>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script>
+        // document.getElementById('button').onclick = duplicate;
+        const config = {
+            apiKey: "AIzaSyC2l7pLCU-5dVikFhs18-Jlgh6lBhn4UPw",
+            authDomain: "acadup-68402.firebaseapp.com",
+            projectId: "acadup-68402",
+            storageBucket: "acadup-68402.appspot.com",
+            messagingSenderId: "735931673293",
+            appId: "1:735931673293:web:0f176521631eb824459784",
+            measurementId: "G-TJCF4QGHGG"
+        };
+        firebase.initializeApp(config);
+        // const database = firebase.database();
+        const database = firebase.firestore();
+        const jsonData = {};
+        var btn = document.getElementById('buttons');
+        console.log("In script");
+        var i = 1;
+        var addition=1;
+        var mcq = document.getElementById("mcq1");
+        var qn = document.getElementById("Q1");
+        var a = document.getElementById("a1");
+        var b = document.getElementById("b1");
+        var c = document.getElementById("c1");
+        var d = document.getElementById("d1");
+        var mark = document.getElementById("mark1");
+        var ca = document.getElementById("ca1");
+        console.log(i);
+        function duplicate(){
+            // var clone_mcq = mcq.cloneNode(true);
+            addition = ++i;
+            var e= document.createElement("div");
+            var clone_qn = qn.cloneNode(true); 
+            var clone_a = a.cloneNode(true);
+            var clone_b = b.cloneNode(true);
+            var clone_c = c.cloneNode(true);
+            var clone_d = d.cloneNode(true);
+            var clone_mark = mark.cloneNode(true);
+            var clone_ca = ca.cloneNode(true);
+            // clone_mcq.id = "mcq" + ++i;
+            clone_qn.id = "Q" + addition;
+            clone_a.id = "a" + addition;
+            clone_b.id = "b" + addition;
+            clone_c.id = "c" + addition;
+            clone_d.id = "d" + addition;
+            clone_mark.id = "mark" + addition;
+            clone_ca.id = "ca" + addition;
+            e.id="mcq" + addition;
+            // clone_mcq.append(clone_a,clone_b,clone_c,clone_d);
+            e.append(clone_qn,clone_a,clone_b,clone_c,clone_d,clone_mark,clone_ca);
+            // document.append(e);
+            console.log(e);
+            console.log(btn);
+            // mcq.parentNode.appendChild(e);
+            mcq.parentNode.insertBefore(e,btn);
+
+        }
+        function savetoFirebase(data){
+            var cn = document.getElementById("cn").value;
+            // database.ref('/mcqs/'+cn).set(data);
+            database.collection('/mcqs/').doc(cn).get()
+            .then((doc)=>{
+                if(doc.exists){
+                    // database.collection('/mcqs/').doc(cn).update(data);
+                    database.collection('/mcqs/').doc(cn).set(data,{merge:true}); 
+                }
+                else{
+                    database.collection('/mcqs/').doc(cn).set(data);
+                    // database.collection('/mcqs/').doc('as').delete();
+                }
+            })
+            
+        }
+        function save(){
+            
+            // console.log(i);
+            console.log(addition);
+            for(let j=1; j<=addition ;j++)
+            {   
+                // let arr = [];
+                let obj = {}
+
+                var qn = document.getElementById("Q"+j).value;
+                var a = document.getElementById("a"+j).value;
+                var b = document.getElementById("b"+j).value;
+                var c = document.getElementById("c"+j).value;
+                var d = document.getElementById("d"+j).value;
+                var mark = document.getElementById("mark"+j).value;
+                var ca = document.getElementById("ca"+j).value;
+                // arr = [a,b,c,d];
+                console.log(qn);
+                jsonData[qn]={
+                    "option1":a,
+                    "option2":b,
+                    "option3":c,
+                    "option4":d,
+                    "mark":parseInt(mark),
+                    "correct_ans":ca
+                    
+                };
+            }
+            console.log(jsonData);
+            savetoFirebase(jsonData);
+        }
+        function removeElement(){ 
+            console.log('sdasda',i);
+            if (i>1)
+            {
+            i=i-1;
+            
+            var obj = document.getElementById('mcq'+addition);
+            addition-=1;
+            console.log(obj);
+            console.log('sadsd',i);
+
+            obj.remove();
+            }
+            // else{
+            //     return
+            // }
+
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+html{
+	scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding:0;
+    overflow-y: scroll;
+	overflow-x: hidden;
+	max-width: 100%;
+  background-color: #fff;
+  
+  
+}
+/* navbar */
+#title{
+    margin: 0;
+    padding: 0 3rem 0;
+    background-color: rgba(175, 246, 248, 0.863);
+}
+ 
+.navbar-nav>li{
+  
+    font-size: 4 rem; 
+    
+  }
+  .nav-item{
+    margin: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+    position: auto;
+    font-weight: 500;
+    
+  }
+  .login-buttons{
+    margin: 3px;
+  }
+  
+  .bs-example{
+    /* margin: 0px 5px 5px 10px; */
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  
+  .navbar-brand{
+    font-family:'Times New roman' ;
+    font-size: 2.5rem;
+   
+  }
+
+  /* top- container */
+  #top-container{
+      margin: 0;
+     padding: 1rem 3rem 3rem;
+  }
+  .container{
+      background-color: #fff;
+    
+          
+  }
+  .image{
+    /* vertical-align: middle; */
+    width:40px;
+    border-style: none;
+    border-radius: 100%;
+  }
+  .head{
+    color: #b8b5ae;
+  }
+  .foot{
+    color: #66645e;
+  }
+  .fa-star{
+    color: green;
+    cursor: pointer;
+  }
+  .review{
+    color:#66645e;
+    margin-left: 3px;
+  }
+  .price{
+    color:#e63410;
+    font-size: 25px;
+  }
+  .prc{
+    text-align: right!important;
+    line-height: 22px;
+  }
+  .brd{
+    border-left: 1px solid #b8b5ae;
+    border-right: 1px solid #b8b5ae;
+    padding-left: 15px;
+  
+  }
+  .atc{
+    border-radius: 5% !important;
+    background-color: blue !important;
+    text-decoration: none;
+    font-size: 17px;
+    color:#fff;
+   
+    
+   
+  }
+
+  .youtube-video{
+      margin: 0 auto;
+      width:920px;
+      height: 580px;
+      padding:3rem 0 3rem;
+      position: relative;
+      
+  }
+  .youtube-video iframe{
+    width: 100%;
+    height:80%;
+    position: absolute;
+  }
+ 
+  .tablink {
+    background-color: #3846c8;
+    color: black;
+    float: left;
+    border: 1px solid #e5e5e5;
+    border-bottom: none !important;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 14px;
+    font-size: 17px;
+    width: 25%;
+  }
+  
+  .tablink:hover {
+    background-color: #777;
+    color:blue;
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    color: black;
+    display: none;
+    border: 1px solid #e9e6e6;
+    padding: 80px 20px;
+    height: 100%;
+    box-shadow:0 2px 3px 0 #b8b5ae;
+  }
+  
+  /* Overview section styling starts */
+  .line{
+    border-left: 1px solid #b8b5ae;
+  }
+  .learnout{
+    list-style-type: disc;
+  }
+  .br{
+    margin-top: 10px;
+    border-bottom: 1px solid #b8b5ae;
+  }
+  .size{
+    font-size: 16px;
+  }
+  /* Overview section styling ends */
+
+  /*Notes button styling starts*/
+
+  /* Dropdown Button */
+.dropbtn {
+  background-color: #0793f1;
+  color: white;
+  padding: 0 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #78b9e4;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 8px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+  /*Notes button styling ends*/
+  
+  /* Instructor starts */
+  .card{
+    line-height: 25px;
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  .bcontent {
+    margin-top: 10px;
+  }
+  /* Instructor ends */
+  
+  /* Review portion starts */
+  .heading {
+    font-size: 25px;
+  }
+  .rate {
+    font-size: 25px;
+  }
+  .checked {
+    color: orange;
+  }
+  /* Three column layout */
+  .side {
+    float: left;
+    width: 15%;
+    margin-top:10px;
+  }
+  .middle {
+    margin-top:10px;
+    float: left;
+    width: 70%;
+  }
+  /* Place text to the right */
+  .right {
+    text-align: right;
+  }
+  /* Clear floats after the columns */
+  .row1:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .row1{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  /* The bar container */
+  .bar-container {
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
+  }
+  /* Individual bars */
+  .bar-5 {width: 60%; height: 18px; background-color: #4CAF50;}
+  .bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
+  .bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
+  .bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+  .bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+  /* Review portion ends */
+
+  /* Footer Styling Starts */
+.footer-below{
+  color:white;
+  background:black;
+  padding:15px;
+}
+.footer-below h4{
+  font-size: 23px !important;
+}
+.footer-below p{
+  color:grey;
+}
+.footer-below p>a{
+  color:grey;
+  text-decoration: none;
+}
+.footer-below p> a:hover{
+  color:cyan !important;
+  text-decoration: none;
+}
+.upper{
+  border-bottom:1px solid cyan;
+  margin-bottom: 25px;
+  margin-top:25px;
+}
+/* Footer Styling Ends */
+
+@media only screen and (max-width: 960px){
+  
+  .youtube-video{
+    margin:0 auto !important;
+    width: 480px;
+    height:280px;
+    padding:5px;
+    right:0 !important;
+  }
+  .youtube-video iframe{
+    width:100%;
+    height:90%;
+    
+    padding-bottom: 10px;
+  }
+  .atc{
+    font-size: large;
+    width:100%;
+    margin:5px auto;
+   
+  }
+  .nav-item{
+    font-size: x-large;
+  }
+  .dropdown-item{
+    font-size: x-large;
+  }
+  .tablink{
+    font-size: large;
+  }
+}
