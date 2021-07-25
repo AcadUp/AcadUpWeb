@@ -1,0 +1,71 @@
+html{
+	scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0 2rem 3rem;
+    overflow-y: scroll;
+	overflow-x: hidden;
+	max-width: 100%;
+  background-color: #344fa1;
+  text-align: center;
+}
+/* navbar */
+
+ 
+.navbar-nav>li{
+  
+    font-size: 4 rem; 
+    
+  }
+  .nav-item{
+    margin: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+    position: auto;
+    font-weight: 500;
+    
+  }
+  .login-buttons{
+    margin: 3px;
+  }
+  
+  .bs-example{
+    /* margin: 0px 5px 5px 10px; */
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+  
+  .navbar-brand{
+    font-family:'Times New roman' ;
+    font-size: 2.5rem;
+   
+  }
+
+  /* cards */
+  .courses-img{
+    width:60%;  
+    margin:3%;
+    border-radius: 30%;
+    
+  }
+ .courses-img:hover{
+     background-color: whitesmoke;
+     
+ }
+
+ @media only screen and (max-width: 960px){
+   .navbar-nav{
+    text-align: left;
+   }
+   
+  .nav-item{
+    font-size: x-large;
+    
+  }
+  .dropdown-item{
+    font-size: x-large;
+  }
+}
+ 
+ 

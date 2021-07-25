@@ -1,0 +1,119 @@
+html{
+	scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0 2rem 3rem;
+    overflow-y: scroll;
+	overflow-x: hidden;
+	max-width: 100%;
+  background-color:#fcfcd2 ;
+  text-align: center;
+}
+/* navbar */
+
+ 
+.navbar-nav>li{
+  
+    font-size: 4 rem; 
+    
+  }
+  .nav-item {
+    margin: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    position: auto;
+    font-weight: 500;
+       
+  }
+  .dropdown-item{
+    font-weight: 500;
+    margin: 2px;
+  }
+  
+  
+  .bs-example{
+    
+    padding-top: 2%;
+    padding-bottom: 2%;
+    
+  }
+ 
+  
+  .navbar-brand{
+    font-family:'Times New roman' ;
+    
+   
+  }
+
+  /* Chapter Styling starts */
+  .card-deck{
+    padding: 0 3rem 3rem;
+  }
+  .card{
+    background-color: #1eae98;
+    border-radius: 7.5%;
+      
+  }
+  .card:hover .card-img-top{
+    opacity: 0.7;
+  }
+  .card:hover .hide {
+    opacity: 1;
+  }
+  
+  .hide{
+    margin: 0 1rem 1rem;
+    text-align: center;
+  }
+  
+  .chapter-rows{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+  .card-img-top{
+    size: 80%;
+    border-radius: 7%;
+    padding: 0%;
+    border: none;
+   }
+
+
+
+@media(min-width:770px) {
+  .last-row{
+    padding-right: 300px;
+  }
+  .last-card{
+    width: 21%;
+    height: 30%;
+     margin-left: 3rem;
+  }
+}
+  
+  
+
+  @media(max-width: 770px){
+    .card{
+      size: 50%;
+    }
+    .navbar-nav{
+      text-align: left;
+     }
+     
+    .nav-item {
+      font-size: 1.5rem;
+    }
+    .dropdown-item{
+      font-size: 1.5rem;
+    }
+    
+    .login-buttons{
+      font-size: 1.5rem;
+    }
+    .last-card{
+      
+       margin: 0 3rem;
+    }
+  }

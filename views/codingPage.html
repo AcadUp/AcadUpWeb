@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+<style>
+    .row{
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+    .arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+    .grade{
+      display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto auto 48px;
+    }
+    #dropdown{
+      width: 136px;
+      border-radius: 8px;
+      border: 1px solid #e2e2e2;
+      padding: 14px 16px;
+      font-size: 16px;
+      font-weight: 600;
+      height: 48px;
+      margin-left: 32px;
+      line-height: 1;
+      text-align: left;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: url(../public/images/down-arrow.png);
+      background-repeat: no-repeat,repeat;
+      background-position: right 16px top 50%,0 0;
+      background-size: 16px;
+      background-color: #fff;
+    }
+    h2{
+      display: flex;
+      justify-content: center;
+    }
+    .card{
+      border: 1px solid #e9e9e9;
+      border-radius: 10px 10px 10px 10px;
+      margin: 0;
+      /* border-radius: 21px; */
+    }
+    .topButton{
+      width: 335px;
+      height: 56px;
+      border-radius: 8px;
+      -webkit-box-shadow: 0 4px 12px 0 rgb(255 109 38 / 30%);
+      box-shadow: 0 4px 12px 0 rgb(255 109 38 / 30%);
+      /* background-color: #ff6d26; */
+      background-color: #040faa;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      color: #fff;
+      display: flex;
+      -moz-box-pack: center;
+      justify-content: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      -o-justify-content: center;
+      -moz-box-align: center;
+      align-items: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .children-div1 {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.4;
+      letter-spacing: -.4px;
+      color: #333;
+      margin: 0;
+      /* display: inline-block !important; */
+      /* align-content: left; */
+    }   
+    .parent-div1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      /* gap: 3rem;   */
+      gap: 50px;
+      margin: auto 80px;
+
+      /* display: flex;
+      justify-content: center; */
+    }   
+    img{
+      max-width: 100%;
+    }
+    .home_img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    /* justify-self: center; */
+    }
+    .children-div2{
+      font-size: 20px;
+      line-height: 1.6;
+      color: #333;
+      padding-top: 8px;
+      padding-bottom: 16px;
+    }
+    .card-header{
+      /* background-color: lightgreen; */
+      background-color: rgb(225, 224, 238);
+      /* width: 266px;
+      height: 136px; */
+      position: relative;
+      border-radius: 8px 8px 0 0;
+      /* padding: 14px 16px 0; */
+}
+    .card-header-title{
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.4;
+      font-family: Mukta;
+      color: #333;
+      }
+    .card-header-session{
+      font-size: 16px;
+      line-height: 1.5;
+      font-family: Mukta;
+      font-weight: 600;
+      color: #333;
+      position: relative;
+      margin-top: 50px;
+      bottom: 8px;
+    }
+    .card-header-content{
+      margin-left: 20px;
+    }
+    .card-body-header{
+      margin-left: 20px;
+      opacity: .4;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.33;
+      color: #333;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+    .card-body-list{
+      margin-bottom: 100px;
+    }
+    .price{
+      margin-left: 20px;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1;
+      color: #333;
+    }
+    span{
+      font-family: Mukta;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #040faa;
+      margin-bottom: 5px;
+      font-weight: 400;
+      position: relative;
+    }
+    .buyNow{
+      width: 80%;
+      /* height: 56px; */
+      border-radius: 8px;
+      box-shadow: 0 4px 12px 0 rgb(255 109 38 / 30%);
+      background-color: #040faa;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      margin-left: 25px;
+
+    }
+</style>
+</head>
+
+<body>
+  <div class="parent-div1">
+    <div class="child-div1">
+      <h1 class="children-div1">Coding Classes for Kids - Introduce your child to the World of Coding</h1>
+    <div class="children-div2">Help them build websites, apps and games with AcadUP's Super Teachers</div>
+    <a class="topButton" href="#">BOOK A FREE DEMO CLASS</a>
+    
+  </div>
+    <img class="home_img" src="../public/images/first-fold.jpg" />
+    
+  </div>
+  <h2>Let us help you with the Best Coding Course for your kids</h2>
+    <div class="row ml-20">
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-header-content">
+                <div class="card-header-title">Introduction to Coding</div>
+                <div class="card-header-session">8 Classes</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-body-header">Course includes</h5>
+              <ul class="card-body-list">
+                <li>Basics Of Coding</li>
+                <li>Create Animation</li>
+              </ul>
+              <div class="price">
+                <span>₹750 per Class</span>
+                <br>
+                ₹6000
+              </div>
+              <hr>
+
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a href="#" class="btn btn-primary buyNow">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-header-content">
+                <div class="card-header-title">Introduction to Coding</div>
+                <div class="card-header-session">8 Classes</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-body-header">Course includes</h5>
+              <ul class="card-body-list">
+                <li>Basics Of Coding</li>
+                <li>Create Animation</li>
+              </ul>
+              <div class="price">
+                <span>₹750 per Class</span>
+                <br>
+                ₹6000
+              </div>
+              <hr>
+
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a href="#" class="btn btn-primary buyNow">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-header-content">
+                <div class="card-header-title">Introduction to Coding</div>
+                <div class="card-header-session">8 Classes</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-body-header">Course includes</h5>
+              <ul class="card-body-list">
+                <li>Basics Of Coding</li>
+                <li>Create Animation</li>
+              </ul>
+              <div class="price">
+                <span>₹750 per Class</span>
+                <br>
+                ₹6000
+              </div>
+              <hr>
+
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a href="#" class="btn btn-primary buyNow">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-header-content">
+                <div class="card-header-title">Introduction to Coding</div>
+                <div class="card-header-session">8 Classes</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-body-header">Course includes</h5>
+              <ul class="card-body-list">
+                <li>Basics Of Coding</li>
+                <li>Create Animation</li>
+              </ul>
+              <div class="price">
+                <span>₹750 per Class</span>
+                <br>
+                ₹6000
+              </div>
+              <hr>
+
+              <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+              <a href="#" class="btn btn-primary buyNow">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grade">
+      <h2>Experience our Free LIVE Coding Masterclasses</h2>
+      
+      <select  name="cars" id="dropdown" > 
+        <option value="1-4">1-4</option>
+        <option value="5-8">5-8</option>
+        <option value="9-12">9-12</option>
+      </select>
+      <!-- <i class="arrow down"></i> -->
+    </div>
+      
+</body>
+</html> 

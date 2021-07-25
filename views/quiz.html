@@ -1,0 +1,80 @@
+<html>
+<head>
+<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../public/css/quiz.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>JS Quiz</title>
+<style>
+    #preID{
+      display: none;
+    }
+    #nextID{
+      display: none;
+    }
+    #startButton{
+      display: none;
+    }
+    #loading{
+      width: 2em;
+    }
+    .mar{
+      margin: 30;
+    }
+  </style>
+<body>
+  
+    <div class="quizContainer container-fluid well well-lg h-100 row align-items-center">
+        <div id="quiz1" class="text-center">
+			<!-- <h3>Acad UP</h3> -->
+			<!-- <center><img class="img-responsive" height="180" width="180" src="/images/LOGO SHIELD 4.png"></center> -->
+			<img class="img-responsive mar" height="180" width="180" src="../public/images/LOGO SHIELD 4.png">
+      <h4 style="color:#FF0000;position:absolute;left:80%;top:5%;" align="center" ><span id="iTimeShow">Time Remaining: </span><br/><span id='timer' style="font-size:25px;"></span></h4>
+			<!-- <h2>Quiz</h2> -->
+
+      <!-- <img id="loading" src="/images/load1.gif"> -->
+		</div>
+    <!-- <h3>Instructions</h3> -->
+    
+    <div id="instructions">
+      <h3>Instructions:</h3>
+      <div class="instructionsList">
+      <ol type="1">
+        <li>Quiz will last for <strong>3 minutes</strong></li>
+        <li>Attempt <strong>All Questions</strong> </li>
+        <li>Login to save your score</li>
+        <li>Please use ONE device, browser and tab while taking this test. As an anti-cheating measure, switching between tabs, browsers or devices will result in loss of your test data.</li>
+      </ol>
+      <img id="loading" src="../public/images/load1.gif">
+      <div id="container"></div>
+      <input type="checkbox" id="instructionsCheck" name="instructionsCheck" value="instructionsCheck">
+      <label for="instructionsCheck"> I have read and understood the instructions.</label><br>
+    </div>
+    </div>
+		
+    <div class="question"></div>
+    <div id="marks"></div>
+    <ul class="choiceList"></ul>
+    <div class="quizMessage"></div>
+    <div class="result"></div>
+    
+    <button id="startButton">START TEST</button>
+    
+    <!-- <br> -->
+    <!-- <div class="btns"> -->
+		  <button class="preButton" id="preID">Previous Question</button>
+      <button class="nextButton" id="nextID">Next Question</button>
+    <!-- </div>    -->
+    </div>
+    <!-- <button></button> -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+
+    <script src="../public/js/quiz.js" type="module"></script>
+</body>
+  </html>
