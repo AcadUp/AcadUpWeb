@@ -8,6 +8,7 @@ const dotenv = require("dotenv")
 const class1 = require('./routes/class')
 const subject1 = require('./routes/subject')
 const chapter1 = require('./routes/chapter')
+const router = require('./routes/payment')
 
 let global;
 // require('./public/js/firebase_config.js');
@@ -18,6 +19,7 @@ var path = require("path");
 app.use('/',class1)
 app.use('/',subject1)
 app.use('/',chapter1)
+app.use('/',router)
 // const { env, getMaxListeners } = require("process");
 // const { VPC_EGRESS_SETTINGS_OPTIONS } = require("firebase-functions");
 
@@ -79,6 +81,25 @@ app.post("/mcqs",function(req,res){
 		console.log('dhas')
 		res.send('er')
 	}
+});
+
+app.get("/payments/:id",(req,res)=>{
+    var rid= req.params.id;
+    console.log(rid);
+    // console.log(postId);
+
+    // Post.findOne({"posts._id": postId},{posts:{ $elemMatch:{_id:postId}}},function(err,result){
+    //        if(err){
+    //            console.log(err);
+    //        }
+    //        else{    
+    //            var payAmount = result.posts[0].cost;
+    //            res.render("payment",{key: process.env.KEY_ID,rid:rid,payAmount:payAmount,currentUser: req.user,pid:postId});
+               
+    //        }
+    //    });    
+
+	res.render("payment.html",{key: process.env.KEY_ID,rid:rid,payAmount:10,currentUser: "123"});
 });
 
 
